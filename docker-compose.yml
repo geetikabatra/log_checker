@@ -1,0 +1,6 @@
+version: "2"
+services:
+  schedule_check:
+    build: .
+    network_mode: bridge
+    container_name: schedule_check
