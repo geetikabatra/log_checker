@@ -4,3 +4,8 @@ services:
     build: .
     network_mode: bridge
     container_name: schedule_check
+  locust: 
+    build:
+      context: .
+      dockerfile: dockefile.locust
+    
