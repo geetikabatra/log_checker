@@ -1,0 +1,64 @@
+swagger: "2.0"
+info:
+  title: API for Fabric8 Analytics Ingestion
+  version: "0.1"
+basePath: "/api/v1/"
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /liveness:
+    get:
+      tags: [Service settings]
+      operationId: rest_api.liveness
+      summary: Get job service liveness
+      responses:
+        200:
+          description: Service is alive
+  /readiness:
+    get:
+      tags: [Service settings]
+      operationId: rest_api.readiness
+      summary: Get job service readiness
+      responses:
+        200:
+          description: Service is ready
+  /report:
+    post:
+      tags: [End points]
+      operationId: rest_api.report
+      summary: generates report
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        200:
+          description: Data ingestion is successful
+        400:
+          description: Error in data ingestion
+  /user:
+    post:
+      tags: [End points]
+      operationId: rest_api.user_post
+      summary: Ingests User data
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        200:
+          description: User ingestion is successful
+        400:
+          description: Error in User ingestion
+    get:
+      tags: [End points]
+      operationId: rest_api.user_get
+      summary: Get User data
+      responses:
+        200:
+          description:  User is present
+        400:
+          description: Input a valid user
+  #### Add swagger for pages
