@@ -1,4 +1,3 @@
-# Copyright © 2018 Red Hat Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -25,7 +24,8 @@ from flask import request
 
 def call_logger():
     logger = logging.getLogger('werkzeug')
-    handler = logging.FileHandler('access.log')
+    handler = logging.FileHandler('/tmp/access.log')
+    #handler = logging.FileHandler('../../tmp/tempLog.log')
     logger.addHandler(handler)
 
 def readiness():

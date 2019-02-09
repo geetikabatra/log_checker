@@ -1,5 +1,3 @@
-# Copyright © 2018 Red Hat Inc.
-#
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -27,8 +25,8 @@ class LogInput():
         :param name_: name_ of the sender
         :return: None
         """
-        filename_ = 'tmp/tempLog.log'
+        filename_ = '../tmp/tempLog.log'
         
         date_ = datetime.datetime.now()
-        pivot_time = datetime.datetime.strptime(x, '%d/%b/%Y:%H:%M:%S')
+        pivot_time = datetime.datetime.strptime(x, '%d/%b/%Y %H:%M:%S')
         

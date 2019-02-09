@@ -1,11 +1,20 @@
-version: "2"
+version: "3"
 services:
   schedule_check:
     build: .
     network_mode: bridge
     container_name: schedule_check
+    ports:
+    - "5000:5000"
+    hostname: schedule_check
+
   locust: 
     build:
       context: .
-      dockerfile: dockefile.locust
-    
+      dockerfile: Dockerfile.locust
+    links:
+      - schedule_check
+    ports:
+    - "8089:8089"
+    container_name: locust
+  
