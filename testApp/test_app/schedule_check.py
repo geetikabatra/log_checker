@@ -60,5 +60,5 @@ class ScheduleJob():
         scheduler = BlockingScheduler()
         scheduler.add_job(watch_job, 'interval', seconds=10)
         scheduler.start()
-        # watch_job()
+        
 ScheduleJob.schedule_job()

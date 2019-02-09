@@ -8,13 +8,13 @@ services:
     - "5000:5000"
     hostname: schedule_check
 
-  locust: 
-    build:
-      context: .
-      dockerfile: Dockerfile.locust
-    links:
-      - schedule_check
-    ports:
-    - "8089:8089"
-    container_name: locust
+  # locust: 
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.locust
+  #   depends_on:
+  #     - schedule_check
+  #   ports:
+  #   - "8089:8089"
+  #   container_name: locust
   

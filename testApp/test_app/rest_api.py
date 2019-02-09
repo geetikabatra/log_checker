@@ -21,6 +21,9 @@ import flask
 import defaults
 import logging
 from flask import request
+from schedule_check import ScheduleJob
+        
+ScheduleJob.schedule_job()
 
 def call_logger():
     logger = logging.getLogger('werkzeug')

@@ -6,5 +6,6 @@ set -x
 
 #Start Locust service
 
-nohup python3 testApp/rest_api.py &
-python3 schedule_check.py
+gunicorn --pythonpath test_app/ \
+         --bind 0.0.0.0:${APP_PORT:-5000} \
+          test_app.rest_api:app
