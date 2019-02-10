@@ -24,15 +24,21 @@ from os import environ, path
 
 logger = logging.getLogger(__name__)
 
-SWAGGER_YAML_PATH = path.join(path.dirname(path.realpath(__file__)), 'swagger/swagger.yaml')
+SWAGGER_YAML_PATH = path.join(
+    path.dirname(
+        path.realpath(__file__)),
+    'swagger/swagger.yaml')
 print("********************************************************")
 print(SWAGGER_YAML_PATH)
+
+
 class AppConfiguration(object):
     """Configuration."""
-    
+
     def __init__(self):
         """Initiates the class.
 
         """
+
 
 configuration = AppConfiguration()

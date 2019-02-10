@@ -21,14 +21,13 @@ import flask
 import defaults
 import logging
 from flask import request
-# from schedule_check import ScheduleJob
 
 
 def call_logger():
     logger = logging.getLogger('werkzeug')
     handler = logging.FileHandler('/var/log/access.log')
-    #handler = logging.FileHandler('../../tmp/tempLog.log')
     logger.addHandler(handler)
+
 
 def readiness():
     """Readiness probe."""
@@ -57,6 +56,7 @@ def report():
 
     call_logger()
     return flask.jsonify(resp_dict), 200
+
 
 def user_post():
     """User Data."""
@@ -90,6 +90,7 @@ def user_get():
     call_logger()
     return flask.jsonify(resp_dict), 200
 
+
 def pages_create():
     """Pages Data."""
     """
@@ -105,9 +106,10 @@ def pages_create():
         resp_dict["summary"] = "Set content type to application/json"
         call_logger()
         return flask.jsonify(resp_dict), 400
-    
+
     call_logger()
     return flask.jsonify(resp_dict), 200
+
 
 app = connexion.FlaskApp(__name__)
 app.add_api(defaults.SWAGGER_YAML_PATH)
