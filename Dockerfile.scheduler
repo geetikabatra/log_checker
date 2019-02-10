@@ -1,11 +1,11 @@
 FROM registry.centos.org/centos/centos:7
 
-ENV APP_DIR='/locust'
-#RUN touch /var/log/access.log
+ENV APP_DIR='/schedule_check'
+RUN touch /var/log/access.log
 
 WORKDIR ${APP_DIR}
-ADD locust/  ${APP_DIR}
-RUN chmod +x start_locust.sh
+ADD schedule_check/  ${APP_DIR}
+RUN chmod +x start_scheduler.sh
 
 RUN yum install -y epel-release &&\
  yum install -y gcc gcc-c++ python34-pip python34-devel &&\
@@ -14,4 +14,4 @@ RUN yum install -y epel-release &&\
 RUN pip3 install --upgrade pip
 
 RUN pip3 install -r ${APP_DIR}/requirements.txt
-ENTRYPOINT ["./start_locust.sh"]
+ENTRYPOINT ["./start_scheduler.sh"]

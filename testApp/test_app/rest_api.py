@@ -21,13 +21,12 @@ import flask
 import defaults
 import logging
 from flask import request
-from schedule_check import ScheduleJob
-        
-ScheduleJob.schedule_job()
+# from schedule_check import ScheduleJob
+
 
 def call_logger():
     logger = logging.getLogger('werkzeug')
-    handler = logging.FileHandler('/tmp/access.log')
+    handler = logging.FileHandler('/var/log/access.log')
     #handler = logging.FileHandler('../../tmp/tempLog.log')
     logger.addHandler(handler)
 
@@ -115,4 +114,4 @@ app.add_api(defaults.SWAGGER_YAML_PATH)
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)

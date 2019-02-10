@@ -9,7 +9,7 @@ ADD scripts/entryscript.sh ${APP_DIR}
 RUN chmod +x entryscript.sh
 
 RUN yum install -y epel-release &&\
-    yum install -y gcc python34-pip python34-devel &&\
+    yum install -y gcc gcc-c++ python34-pip python34-devel &&\
     yum clean all
 
 # Pre-install application dependencies to better utilize caching in Docker

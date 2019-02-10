@@ -5,4 +5,4 @@ set -e
 set -x
 
 #Start Locust service
-locust loc_script.py --host=schedule_checker:5000
+locust -f loc_script.py --host=http://schedule-server:5000/

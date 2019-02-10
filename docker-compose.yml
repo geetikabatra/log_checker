@@ -1,20 +1,37 @@
-version: "3"
+version: "3.5"
 services:
-  schedule_check:
+  schedule-server:
     build: .
-    network_mode: bridge
-    container_name: schedule_check
+    container_name: schedule-server
     ports:
-    - "5000:5000"
-    hostname: schedule_check
-
-  # locust: 
-  #   build:
-  #     context: .
-  #     dockerfile: Dockerfile.locust
-  #   depends_on:
-  #     - schedule_check
-  #   ports:
-  #   - "8089:8089"
-  #   container_name: locust
-  
+     - "5000:5000"
+    hostname: schedule-server
+    volumes:
+      - type: bind
+        source: ./tmp/access.log
+        target: /var/log/access.log
+  scheduler:
+    build:
+      context: .
+      dockerfile: Dockerfile.scheduler
+    depends_on:
+      - schedule-server
+    volumes:
+      - type: bind
+        source: ./tmp/access.log
+        target: /var/log/access.log
+    container_name: scheduler
+    links:
+      - schedule-server
+  locust_server: 
+    build:
+      context: .
+      dockerfile: Dockerfile.locust
+    depends_on:
+      - schedule-server
+    ports:
+      - "8089:8089"
+    container_name: locust_server
+    links:
+      - schedule-server
+    
