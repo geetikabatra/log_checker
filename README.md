@@ -12,7 +12,7 @@ It provides a UI interface to access api endpoints. It is available on endpoint
 ```
 http://localhost:5000/api/v1/ui/
 ```
-image:images/swagger.png[title="swagger", alt="swagger"]
+![swagger](images/swagger.png)
 
 ### scheduler
 It is a job which is scheduled every 2 minutes and checks the log file `/var/log/access.log` for any activity which might need to be noticed.
@@ -23,8 +23,7 @@ It is available on the endpoint
 ```
 http://localhost:8089/
 ```
-image:images/locust.png[title="locust", alt="locust"]
-
+![locust](images/locust.png)
 
 Steps to build the service and run.
 
