@@ -1,6 +1,6 @@
-.PHONY: all generate clean
+.PHONY: all generate clean docker
 
-all: generate clean
+all: clean generate docker
 
 generate:
 	@echo "Creating empty access log to mount"
