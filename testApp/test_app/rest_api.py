@@ -24,6 +24,7 @@ from flask import request
 
 
 def call_logger():
+    """log function."""
     logger = logging.getLogger('werkzeug')
     handler = logging.FileHandler('/var/log/access.log')
     logger.addHandler(handler)

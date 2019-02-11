@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 
-# Copyright © 2018 Red Hat Inc.
-#
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -14,10 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-# Author: Geetika Batra <gbatra@redhat.com>
+# Author: Geetika Batra <geetika791@gmail.com>
 #
 
-"""Project setup file for fabric8 analytics ingestion project."""
+"""Project setup file for log checker project."""
 
 from setuptools import setup, find_packages
 
@@ -41,7 +39,7 @@ def get_requirements():
 reqs, dep_links = get_requirements()
 
 setup(
-    name='fabric8-analytics-ingestion',
+    name='log_checker',
     version='0.1',
     scripts=[
     ],
@@ -50,9 +48,9 @@ setup(
     dependency_links=dep_links,
     include_package_data=True,
     author='Geetika Batra',
-    author_email='gbatra@redhat.com',
-    description='data ingestion for fabric8',
+    author_email='geetika791@gmail.com',
+    description='Log Checker',
     license='ASL 2.0',
-    keywords='fabric8 analytics ingestion',
-    url='https://github.com/fabric8-analytics/fabric8-analytics-ingestion'
+    keywords='log checker',
+    url='https://github.com/GeetikaBatra/log_checker'
 )
