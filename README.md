@@ -12,10 +12,10 @@ It provides a UI interface to access api endpoints. It is available on endpoint
 ```
 http://localhost:5000/api/v1/ui/
 ```
-[[https://github.com/GeetikaBatra/log_checker/blob/master/images/swagger.png|alt=swagger]]
+image:images/swagger.png[title="swagger", alt="swagger"]
 
 ### scheduler
-It is a job which is scheduled every 2 minutes and checks the log file `/var/log/access.log' for any activity which might need to be noticed.
+It is a job which is scheduled every 2 minutes and checks the log file `/var/log/access.log` for any activity which might need to be noticed.
 
 ### locust-server
 A testing server which throws multiple requests to load test the app. It uses [locust.io](https://locust.io/).
@@ -23,8 +23,7 @@ It is available on the endpoint
 ```
 http://localhost:8089/
 ```
-[[https://github.com/GeetikaBatra/log_checker/blob/master/images/locust.png|alt=locust]]
-
+image:images/locust.png[title="locust", alt="locust"]
 
 
 Steps to build the service and run.
