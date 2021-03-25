@@ -4,32 +4,74 @@
 #
 #    pip-compile --output-file requirements.txt requirements.in
 #
-apscheduler==3.5.3
-certifi==2018.11.29       # via requests
-chardet==3.0.4            # via requests
-click==7.0                # via clickclick, flask, pip-tools
-clickclick==1.2.2         # via connexion
+certifi==2018.11.29
+    # via requests
+chardet==3.0.4
+    # via requests
+click==7.0
+    # via
+    #   clickclick
+    #   flask
+    #   pip-tools
+clickclick==1.2.2
+    # via connexion
 connexion[swagger-ui]==2.2.0
+    # via -r requirements.in
 flask==1.0.2
-gevent==1.4.0             # via locustio
-greenlet==0.4.15          # via gevent
+    # via
+    #   -r requirements.in
+    #   connexion
+    #   locustio
+gevent==1.4.0
+    # via locustio
+greenlet==0.4.15
+    # via gevent
 gunicorn==19.9.0
-idna==2.8                 # via requests
-inflection==0.3.1         # via connexion
-itsdangerous==1.1.0       # via flask
-jinja2==2.10              # via flask, swagger-ui-bundle
-jsonschema==2.6.0         # via connexion, openapi-spec-validator
+    # via -r requirements.in
+idna==2.8
+    # via requests
+inflection==0.3.1
+    # via connexion
+itsdangerous==1.1.0
+    # via flask
+jinja2==2.10
+    # via
+    #   flask
+    #   swagger-ui-bundle
+jsonschema==2.6.0
+    # via
+    #   connexion
+    #   openapi-spec-validator
 locustio==0.9.0
-markupsafe==1.1.0         # via jinja2
-msgpack==0.6.1            # via locustio
-openapi-spec-validator==0.2.4  # via connexion
+    # via -r requirements.in
+markupsafe==1.1.0
+    # via jinja2
+msgpack==0.6.1
+    # via locustio
+openapi-spec-validator==0.2.4
+    # via connexion
 pip-tools==3.3.2
-pytz==2018.9              # via apscheduler, tzlocal
-pyyaml==3.13              # via clickclick, connexion, openapi-spec-validator
-pyzmq==17.1.2             # via locustio
-requests==2.21.0          # via connexion, locustio
-six==1.12.0               # via apscheduler, connexion, locustio, openapi-spec-validator, pip-tools
-swagger-ui-bundle==0.0.3  # via connexion
-tzlocal==1.5.1            # via apscheduler
-urllib3==1.24.1           # via requests
-werkzeug==0.14.1          # via flask
+    # via -r requirements.in
+pyyaml==5.4
+    # via
+    #   clickclick
+    #   connexion
+    #   openapi-spec-validator
+pyzmq==17.1.2
+    # via locustio
+requests==2.21.0
+    # via
+    #   connexion
+    #   locustio
+six==1.12.0
+    # via
+    #   connexion
+    #   locustio
+    #   openapi-spec-validator
+    #   pip-tools
+swagger-ui-bundle==0.0.3
+    # via connexion
+urllib3==1.24.1
+    # via requests
+werkzeug==0.14.1
+    # via flask
